@@ -1,0 +1,147 @@
+HTML (index.html)
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <h1>PWA Example</h1>
+    </header>
+    <main>
+        <p>This is a basic PWA example.</p>
+        <button id="install-button">Install PWA</button>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+CSS (styles.css)
+```
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444;
+}
+```
+
+JavaScript (script.js)
+```
+// Register service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+            console.log('Service worker registered:', registration);
+        })
+        .catch(error => {
+            console.error('Service worker registration failed:', error);
+        });
+}
+
+// Handle install button click
+const installButton = document.getElementById('install-button');
+installButton.addEventListener('click', async () => {
+    if ('BeforeInstallPromptEvent' in window) {
+        const promptEvent = window.deferredInstallPrompt;
+        if (promptEvent) {
+            promptEvent.prompt();
+            const { outcome } = await promptEvent.userChoice;
+            if (outcome === 'accepted') {
+                console.log('PWA installed');
+            } else {
+                console.log('PWA installation cancelled');
+            }
+            window.deferredInstallPrompt = null;
+        }
+    }
+});
+
+// Handle beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    window.deferredInstallPrompt = event;
+    installButton.style.display = 'block';
+});
+```
+
+Service Worker (sw.js)
+```
+// Cache resources
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open('pwa-cache')
+            .then(cache => {
+                return cache.addAll([
+                    '/',
+                    'index.html',
+                    'styles.css',
+                    'script.js'
+                ]);
+            })
+    );
+});
+
+// Serve cached resources
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                return response || fetch(event.request);
+            })
+    );
+});
+```
+
+Manifest (manifest.json)
+```
+{
+    "short_name": "PWA Example",
+    "name": "PWA Example",
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#333",
+    "display": "standalone",
+    "theme_color": "#333"
+} 
