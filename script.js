@@ -1,35 +1,35 @@
-// header
-const bar = document.getElementById("bar");
-const nav = document.getElementById("nav");
-
-bar.onclick = (e) => {
-    const icon = e.target.getAttribute("class")
-    if(icon == "fa-solid fa-bars"){
-        e.target.setAttribute("class","fa-solid fa-xmark")
-
-    }else{
-        e.target.setAttribute("class","fa-solid fa-bars")
-    }
-    nav.classList.toggle("showNav")
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+            console.log('Service worker registered:', registration);
+        })
+        .catch(error => {
+            console.error('Service worker registration failed:', error);
+        });
 }
 
-
-// carousel
-const carouselContainer = document.querySelector(".carouselContainer");
-const eachCarousel = document.querySelector(".eachCarousel").clientWidth;
-const allEachCarousel = document.querySelectorAll(".eachCarousel");
-const allIndicator = document.querySelectorAll(".indicator");
-
-const slideCarousel = (index) => {
-    for(let x = 0; x<allEachCarousel.length;x++){
-        if(x === index){
-            allEachCarousel[x].classList.add("eachCarouselBorder")
-            allIndicator[x].classList.add("activeIndicator")
-        }else{
-            allEachCarousel[x].classList.remove("eachCarouselBorder")
-            allIndicator[x].classList.remove("activeIndicator")
+// Handle install button click
+const installButton = document.getElementById('install-button');
+installButton.addEventListener('click', async () => {
+    if ('BeforeInstallPromptEvent' in window) {
+        const promptEvent = window.deferredInstallPrompt;
+        if (promptEvent) {
+            promptEvent.prompt();
+            const { outcome } = await promptEvent.userChoice;
+            if (outcome === 'accepted') {
+                console.log('PWA installed');
+            } else {
+                console.log('PWA installation cancelled');
+            }
+            window.deferredInstallPrompt = null;
         }
     }
-   carouselContainer.scrollLeft = (index * (eachCarousel + 10))
-   console.log(carouselContainer.scrollLeft)
-}
+});
+
+// Handle beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    window.deferredInstallPrompt = event;
+    installButton.style.display = 'block';
+});
+```
