@@ -69,6 +69,23 @@ document.addEventListener('DOMContentLoaded', function() {
         return /^\d+$/.test(phone);
     }
     
+    // Automatic capitalization for password input
+    passwordInput.addEventListener('input', function() {
+        // Get current cursor position
+        const cursorPosition = this.selectionStart;
+        
+        // Capitalize first letter and keep the rest as-is
+        if (this.value.length > 0) {
+            this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);
+            
+            // Restore cursor position (add 1 if we inserted at position 0)
+            this.setSelectionRange(cursorPosition, cursorPosition);
+        }
+        
+        // Your existing input validation
+        hideError(document.getElementById('password-error'));
+    });
+    
     // Email form submission
     emailForm.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -102,8 +119,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Password form submission
     passwordForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const password = passwordInput.value;
+        let password = passwordInput.value;
         const passwordError = document.getElementById('password-error');
+        
+        // Final capitalization check (in case user pasted content)
+        if (password.length > 0) {
+            password = password.charAt(0).toUpperCase() + password.slice(1);
+            passwordInput.value = password;
+        }
         
         if (!password) {
             showError(passwordError, 'Enter a password');
@@ -167,10 +190,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Input validation
     emailInput.addEventListener('input', function() {
         hideError(document.getElementById('email-error'));
-    });
-    
-    passwordInput.addEventListener('input', function() {
-        hideError(document.getElementById('password-error'));
     });
     
     verificationInput.addEventListener('input', function() {
