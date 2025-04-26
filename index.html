@@ -11,8 +11,13 @@
         <h1>Login Example</h1>
     </header>
     <main>
-        <p>This is a basic PWA example.</p>
-        <button id="install-button">Install PWA</button>
+        <form id="telegramForm">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="tel" name="phone" placeholder="Phone Number">
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Send to Telegram</button>
+      </form>
     </main>
     <script src="script.js"></script>
 </body>
