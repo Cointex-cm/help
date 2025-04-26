@@ -19,7 +19,7 @@ ${data.message}
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        chat_id: "8101442954",
+        chat_id: "8163151595",
         text: text,
         parse_mode: "Markdown"
       })
