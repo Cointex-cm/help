@@ -16,15 +16,15 @@ body {
 
 .container {
     max-width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .setup{
-    width: 98%;
+    width: 99%;
     border: 1px solid #dadce0;
     margin: auto;
     border-radius: 5px;
@@ -41,6 +41,7 @@ header {
     font-size: 30px;
     font-weight: 500;
     margin-top: 15px;
+    margin-bottom: 0px;
     letter-spacing: -2px;
 }
 
