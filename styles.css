@@ -35,14 +35,13 @@ header {
     padding: 5px 24px;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
 }
 
 .google-logo {
     font-size: 24px;
     font-weight: 500;
     margin: auto;
-    letter-spacing: -0.8px;
+    letter-spacing: -1.4x;
 }
 
 .blue { color: #4285F4; }
