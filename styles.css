@@ -27,6 +27,7 @@ body {
     width: 98%;
     border: 1px solid #dadce0;
     margin: auto;
+    border-radius: 5px;
 }
 
 /* Header Styles */
