@@ -40,8 +40,8 @@ header {
 .google-logo {
     font-size: 24px;
     font-weight: 500;
-    margin-top: 10px;
-    letter-spacing: -1.4px;
+    margin-top: 15px;
+    letter-spacing: -2px;
 }
 
 .blue { color: #4285F4; }
@@ -75,7 +75,7 @@ main {
 }
 
 .card-content {
-    padding: 40px 40px 36px;
+    padding: 20px 40px 36px;
 }
 
 /* Typography */
