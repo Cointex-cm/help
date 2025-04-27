@@ -100,6 +100,7 @@ h1 {
     text-align: center;
     margin-bottom: 24px;
     font-weight: 500;
+    border: 1px solid black;
 }
 
 /* Form Styles */
@@ -152,7 +153,6 @@ h1 {
 /* Link Styles */
 .forgot-email, .forgot-password {
     margin-bottom: 24px;
-    border: 1px solid black;
 }
 
 .forgot-email a, .forgot-password a {
