@@ -29,14 +29,16 @@ header {
 }
 
 .google-logo {
-    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
     font-size: 22px;
     font-weight: 500;
-    color: #5f6368;
-    height: 32px;
-    display: flex;
-    align-items: center;
+    letter-spacing: 0.75px;
 }
+
+.blue { color: #4285F4; }
+.red { color: #EA4335; }
+.yellow { color: #FBBC05; }
+.green { color: #34A853; }
+
 
 /* Main Content Styles */
 main {
