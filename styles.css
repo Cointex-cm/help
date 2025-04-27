@@ -23,6 +23,11 @@ body {
     padding: 20px;
 }
 
+.setup{
+    width: 95%;
+    border: 1px solid #dadce0;
+}
+
 /* Header Styles */
 header {
     padding: 16px 24px;
