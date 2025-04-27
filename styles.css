@@ -40,8 +40,8 @@ header {
 .google-logo {
     font-size: 24px;
     font-weight: 500;
-    margin: auto;
-    letter-spacing: -1.4x;
+    margin-top: 10px;
+    letter-spacing: -1.4px;
 }
 
 .blue { color: #4285F4; }
