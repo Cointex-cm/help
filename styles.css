@@ -42,7 +42,7 @@ header {
     font-size: 24px;
     font-weight: 500;
     margin: auto;
-    text-spacing: 0.2rem;
+    letter-spacing: 0.2px;
 }
 
 .blue { color: #4285F4; }
