@@ -24,7 +24,7 @@ body {
 }
 
 .setup{
-    width: 97%;
+    width: 95%;
     border: 1px solid #dadce0;
     margin: auto;
     border-radius: 5px;
@@ -76,7 +76,7 @@ main {
 }
 
 .card-content {
-    padding: 20px 30px 36px;
+    padding: 20px 20px 36px;
 }
 
 /* Typography */
