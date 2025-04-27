@@ -76,7 +76,7 @@ main {
 }
 
 .card-content {
-    padding: 20px 20px 36px;
+    padding: 20px 10px 36px;
 }
 
 /* Typography */
@@ -153,14 +153,14 @@ h1 {
 /* Link Styles */
 .forgot-email, .forgot-password {
     margin-bottom: 24px;
+    margin-top: 5px;
 }
 
 .forgot-email a, .forgot-password a {
     color: #1a73e8;
     text-decoration: none;
     font-weight: 300;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 12px;
 }
 
 .forgot-email a:hover, .forgot-password a:hover {
