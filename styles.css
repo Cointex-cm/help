@@ -35,13 +35,13 @@ body {
     padding: 1px 24px;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .google-logo {
     font-size: 30px;
     font-weight: 500;
     margin-top: 15px;
-    margin-bottom: 0px;
     letter-spacing: -2px;
 }
 
