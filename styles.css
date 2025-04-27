@@ -124,6 +124,7 @@ h1 {
     padding: 0 4px;
     transition: all 0.2s;
     pointer-events: none;
+    font-weight: 300;
 }
 
 .form-group input:focus + label,
