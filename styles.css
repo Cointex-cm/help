@@ -120,7 +120,7 @@ h1 {
 
 .form-group input:focus {
     border-color: #1a73e8;
-    border-width: 2px;
+    border-width: 1.5px;
     padding: 12px 14px;
 }
 
@@ -158,8 +158,9 @@ h1 {
 .forgot-email a, .forgot-password a {
     color: #1a73e8;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 14px;
+    margin-top: 5px;
 }
 
 .forgot-email a:hover, .forgot-password a:hover {
